@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCal Hub - Login & Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #4f46e5, #6ee7b7);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg opacity-90">
+        <h2 class="text-3xl font-bold text-center text-gray-800">Welcome to SmartCal Hub</h2>
+
+        <div id="form-container" class="space-y-6">
+            <!-- Login Form -->
+            <div id="login-form" class="hidden">
+                <h3 class="text-2xl font-semibold text-center text-gray-800">Login</h3>
+                <form>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <button type="submit" class="w-full mt-4 text-white bg-blue-600 hover:bg-blue-700 rounded-md p-3 transition duration-200">Login</button>
+                </form>
+                <p class="mt-4 text-center text-gray-600">Don't have an account? <a href="#" id="show-signup" class="text-blue-600 hover:underline">Sign Up</a></p>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signup-form" class="hidden">
+                <h3 class="text-2xl font-semibold text-center text-gray-800">Sign Up</h3>
+                <form>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Username</label>
+                        <input type="text" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                        <input type="date" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Gender</label>
+                        <select required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Address</label>
+                        <input type="text" placeholder="Street Address" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                        <input type="text" placeholder="City" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                        <input type="text" placeholder="State" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                        <input type="text" placeholder="Zip Code" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Profile Picture</label>
+                        <input type="file" accept="image/*" class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Security Question</label>
+                        <select required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                            <option value="" disabled selected>Select a question</option>
+                            <option value="first_pet">What was the name of your first pet?</option>
+                            <option value="mother_maiden_name">What is your mother's maiden name?</option>
+                            <option value="favorite_color">What is your favorite color?</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Answer</label>
+                        <input type="text" required class="block w-full mt-1 border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-300">
+                    </div>
+                    <div class="flex items-center mt-4">
+                        <input type="checkbox" required class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <label class="ml-2 block text-sm text-gray-600">I agree to the <a href="#" class="text-blue-600 hover:underline">terms and conditions</a>.</label>
+                    </div>
+                    <button type="submit" class="w-full mt-4 text-white bg-blue-600 hover:bg-blue-700 rounded-md p-3 transition duration-200">Sign Up</button>
+                </form>
+                <p class="mt-4 text-center text-gray-600">Already have an account? <a href="#" id="show-login" class="text-blue-600 hover:underline">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const showSignup = document.getElementById('show-signup');
+        const showLogin = document.getElementById('show-login');
+
+        // Show Login Form
+        function showLoginForm() {
+            loginForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+        }
+
+        // Show Sign Up Form
+        function showSignUpForm() {
+            signupForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+        }
+
+        // Event Listeners
+        showSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSignUpForm();
+        });
+
+        showLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            showLoginForm();
+        });
+
+        // Show the login form by default
+        showLoginForm();
+    </script>
+</body>
+
+</html>
